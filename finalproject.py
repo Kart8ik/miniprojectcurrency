@@ -101,7 +101,7 @@ if btn1:
   col3.markdown(
     f"""
     <div style='border: 1px #282a30; padding: 15px; border-radius: 10px; background-color: #282a30; display: flex; justify-content: center; align-items: center; height: 45px;'>
-        <p>{amount} {src_cur}={currency_conv(src_cur,cnv_cur)[1]} {cnv_cur}</p>
+        <p>{amount} {crncs['data'][src_cur]['symbol']} = {currency_conv(src_cur,cnv_cur)[1]} {crncs['data'][cnv_cur]['symbol']}</p>
         
     </div>
     """,
@@ -124,7 +124,7 @@ if btn2:
     col3.markdown(
     f"""
     <div style='border: 1px #282a30; padding: 15px; border-radius: 10px; background-color: #282a30; display: flex; justify-content: center; align-items: center; height: 45px;'>
-        <p>{amount} {cnv_cur}={currency_conv(cnv_cur,src_cur)[1]} {src_cur}</p>
+        <p>{amount} {crncs['data'][cnv_cur]['symbol']} =  {currency_conv(cnv_cur,src_cur)[1]} {crncs['data'][src_cur]['symbol']}</p>
         
     </div>
     """,
@@ -159,8 +159,9 @@ st.write("""
     </style>
     <div class="footer">
         <p>Follow Karthik on <a href="https://github.com/Kart8ik" target="_blank" style="color: white;">GitHub</a></p>
-        <p>Follow M on <a href="https://github.com/MohammedMusharraf11" target="_blank" style="color: white;">GitHub</a></p>
-	
+        <p>Follow Chethan on <a href="https://github.com/chethans2005" target="_blank" style="color: white;">GitHub</a></p>
+        <p>Follow Daneshwari on <a href="https://github.com/DMelshetty" target="_blank" style="color: white;">GitHub</a></p>
+        <p>Follow Bilal on <a href="https://github.com/Mohammedbilal12345" target="_blank" style="color: white;">GitHub</a></p>
     </div>
          """, unsafe_allow_html=True)
 
