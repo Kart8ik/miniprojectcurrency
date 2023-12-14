@@ -3,10 +3,6 @@ import freecurrencyapi
 import matplotlib.pyplot as plt
 import numpy as np
 
-#backend
-
-#streamlit code
-#frontend
 crncs={'data': {'EUR': {'symbol': '€', 'name': 'Euro', 'symbol_native': '€', 'decimal_digits': 2, 'rounding': 0, 'code': 'EUR', 'name_plural': 'Euros'}, 'USD': {'symbol': '$', 'name': 'US Dollar', 'symbol_native': '$', 'decimal_digits': 2, 'rounding': 0, 'code': 'USD', 'name_plural': 'US dollars'}, 'JPY': {'symbol': '¥', 'name': 'Japanese Yen', 'symbol_native': '￥', 'decimal_digits': 0, 'rounding': 0, 'code': 'JPY', 'name_plural': 'Japanese yen'}, 'GBP': {'symbol': '£', 'name': 'British Pound Sterling', 'symbol_native': '£', 'decimal_digits': 2, 'rounding': 0, 'code': 'GBP', 'name_plural': 'British pounds sterling'}, 'SEK': {'symbol': 'Skr', 'name': 'Swedish Krona', 'symbol_native': 'kr', 'decimal_digits': 2, 'rounding': 0, 'code': 'SEK', 'name_plural': 'Swedish kronor'}, 'CHF': {'symbol': 'CHF', 'name': 'Swiss Franc', 'symbol_native': 'CHF', 'decimal_digits': 2, 'rounding': 0, 'code': 'CHF', 'name_plural': 'Swiss francs'}, 'RUB': {'symbol': 'RUB', 'name': 'Russian Ruble', 'symbol_native': 'руб.', 'decimal_digits': 2, 'rounding': 0, 'code': 'RUB', 'name_plural': 'Russian rubles'}, 'AUD': {'symbol': 'AU$', 'name': 'Australian Dollar', 'symbol_native': '$', 'decimal_digits': 2, 'rounding': 0, 'code': 'AUD', 'name_plural': 'Australian dollars'}, 'BRL': {'symbol': 'R$', 'name': 'Brazilian Real', 'symbol_native': 'R$', 'decimal_digits': 2, 'rounding': 0, 'code': 'BRL', 'name_plural': 'Brazilian reals'}, 'CAD': {'symbol': 'CA$', 'name': 'Canadian Dollar', 'symbol_native': '$', 'decimal_digits': 2, 'rounding': 0, 'code': 'CAD', 'name_plural': 'Canadian dollars'}, 'CNY': {'symbol': 'CN¥', 'name': 'Chinese Yuan', 'symbol_native': 'CN¥', 'decimal_digits': 2, 'rounding': 0, 'code': 'CNY', 'name_plural': 'Chinese yuan'}, 'INR': {'symbol': 'Rs', 'name': 'Indian Rupee', 'symbol_native': 'টকা', 'decimal_digits': 2, 'rounding': 0, 'code': 'INR', 'name_plural': 'Indian rupees'}, 'KRW': {'symbol': '₩', 'name': 'South Korean Won', 'symbol_native': '₩', 'decimal_digits': 0, 'rounding': 0, 'code': 'KRW', 'name_plural': 'South Korean won'}, 'SGD': {'symbol': 'S$', 'name': 'Singapore Dollar', 'symbol_native': '$', 'decimal_digits': 2, 'rounding': 0, 'code': 'SGD', 'name_plural': 'Singapore dollars'}, 'ZAR': {'symbol': 'R', 'name': 'South African Rand', 'symbol_native': 'R', 'decimal_digits': 2, 'rounding': 0, 'code': 'ZAR', 'name_plural': 'South African rand'}}}
 cont1=st.container()
 cont2=st.container()
@@ -49,14 +45,11 @@ with cont2:
     cnv_cur=col3.selectbox('choose the output currency',['USD','INR','GBP','RUB','EUR','CAD','AUD','JPY','CNY','KRW','ZAR','CHF','SEK','SGD','BRL'])
 
 
-#resultc=client.currencies(currencies=['EUR','CAD'])
-
-
 def currency_conv(src_cur1,cnv_cur1):
     client=freecurrencyapi.Client('fca_live_MepLdJdr0dEkrx9Bee1oTevtrlK59Xre3McrYh18')
     print(client.status())
     resultl=client.latest(base_currency=src_cur1,currencies=['USD','INR','GBP','RUB','EUR','CAD','AUD','JPY','CNY','KRW','ZAR','CHF','SEK','SGD','BRL'])
-    #resulth=client.historical('2022-02-02')
+
     print(resultl)
     conversion_rate=resultl['data'][cnv_cur1]
     def convert(amount,conv_rate):
@@ -146,9 +139,9 @@ st.write("""
             position: fixed;
             bottom: 0;
             right: 0;
-            width: 400px; /* Adjust the width as needed */
+            width: 400px; 
             
-            color: white; /* Text color */
+            color: white;
             text-align: center;
             padding: 10px;
         }
